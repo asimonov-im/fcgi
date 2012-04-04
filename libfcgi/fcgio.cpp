@@ -30,6 +30,10 @@ using std::istream;
 using std::ostream;
 using std::streamsize;
 
+#ifdef __QNXNTO__
+#include <stdio.h> // for EOF
+#endif
+
 fcgi_streambuf::fcgi_streambuf(FCGX_Stream * fs, char * b, int bs)
 {
     init(fs, b, bs);
